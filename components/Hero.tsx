@@ -5,8 +5,12 @@ import Button from './Button'
 import Image from 'next/image';
 
 const Hero = () => {
-    const handleScroll = ( ) => {
+    const handleScroll = () => {
+        const nextSection = document.getElementById("discover");
 
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
     }
     return (
         <div className='hero'>
@@ -27,8 +31,8 @@ const Hero = () => {
             <div className='hero__image-container'>
                 <div className="hero__image">
                     <Image src='/hero.png' alt='hero' fill className='object-contain' />
-                    <div className="hero__image-overlay"></div>
                 </div>
+                <div className="hero__image-overlay"></div>
             </div>
         </div>
     )
